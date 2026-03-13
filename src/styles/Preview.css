@@ -1,0 +1,199 @@
+.preview-container {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.preview-controls {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.control-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  color: #374151;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.control-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.control-btn.edit {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  color: #1e40af;
+}
+
+.control-btn.edit:hover {
+  background: #bfdbfe;
+}
+
+.control-btn.print {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+
+.control-btn.print:hover {
+  background: #bbf7d0;
+}
+
+.preview-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.resume-preview {
+  background: white;
+  padding: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #667eea;
+}
+
+.resume-header h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin: 0 0 0.5rem 0;
+}
+
+.resume-header h2 {
+  font-size: 1.25rem;
+  color: #667eea;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.contact-info span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h3 {
+  color: #1a1a1a;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.experience-item,
+.education-item {
+  margin-bottom: 1.5rem;
+}
+
+.experience-header,
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.company,
+.institution {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.loading,
+.error-container {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  margin: 2rem;
+}
+
+.error-container h2 {
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.back-btn {
+  background: #667eea;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Print Styles */
+@media print {
+  .preview-controls,
+  .header {
+    display: none !important;
+  }
+
+  .preview-content {
+    padding: 0;
+  }
+
+  .resume-preview {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  body {
+    background: white !important;
+  }
+}

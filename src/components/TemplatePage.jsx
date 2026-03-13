@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; // Add this import
 
 export default function TemplatePage({ setActiveTemplate, onContinue, isDark }) {
+  const navigate = useNavigate(); // Add this hook
+  
   const containerClasses = isDark ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900';
   const cardClasses = isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200';
   const buttonClasses = 'w-full py-2 rounded-lg font-bold transition-colors duration-200 mt-4';
@@ -18,6 +20,16 @@ export default function TemplatePage({ setActiveTemplate, onContinue, isDark }) 
     { id: 'creative', name: 'Creative', preview: 'A modern design with a unique style.' },
     { id: 'classic', name: 'Classic', preview: 'A simple, one-column layout for traditionalists.' },
   ];
+
+  // Updated handler to navigate with template in URL
+  const handleTemplateSelect = (templateId) => {
+    console.log('🎯 Template selected:', templateId);
+    setActiveTemplate(templateId);
+    
+    // Navigate to builder with template as query parameter
+    // This ensures the builder receives the template even after page refresh
+    navigate(`/builder?template=${templateId}`);
+  };
 
   return (
     <div className={`min-h-screen flex flex-col items-center p-4 transition-colors duration-300 ${containerClasses}`}>
@@ -46,7 +58,7 @@ export default function TemplatePage({ setActiveTemplate, onContinue, isDark }) 
             <h2 className="text-xl font-bold mb-2">{template.name}</h2>
             <p className={`text-sm mb-4 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{template.preview}</p>
             <button 
-              onClick={() => { setActiveTemplate(template.id); onContinue(); }}
+              onClick={() => handleTemplateSelect(template.id)} // Updated handler
               className={`${buttonClasses} bg-blue-600 text-white hover:bg-blue-700`}
             >
               Choose this template

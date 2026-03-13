@@ -88,9 +88,9 @@ export default function IntroPage({ onContinue, isDark }) {
                 isDark ? 'text-gray-400' : 'text-gray-600'
               }`}
             >
-              <li className="flex items-center gap-2">✓ Export as PDF with styling</li>
+              <li className="flex items-center gap-2">✓ Export as PDF </li>
               <li className="flex items-center gap-2">✓ Multiple resume versions</li>
-              <li className="flex items-center gap-2">✓ Shareable online resume link</li>
+              <li className="flex items-center gap-2">✓ Shareable online resume</li>
             </ul>
           </motion.div>
         </div>
